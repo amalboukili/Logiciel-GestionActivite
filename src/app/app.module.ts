@@ -8,10 +8,20 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MoneyComponent } from './money/money.component';
+import { AbsencesComponent } from './absences/absences.component';
+import { ProjetsComponent } from './projets/projets.component';
+
+
 
 const routes: Routes = [
   { path: '' , redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component : HomeComponent},
+  { path: 'Calendar', component : CalendarComponent},
+  { path: 'Frais', component : MoneyComponent},
+  { path: 'Absences', component: AbsencesComponent},
+  { path: 'Projets', component: ProjetsComponent},
+
 ];
 
 @NgModule({
@@ -20,8 +30,11 @@ const routes: Routes = [
     NavbarComponent,
     SidebarComponent,
     HomeComponent,
-    CalendarComponent
-  ],
+    CalendarComponent,
+    MoneyComponent,
+    ProjetsComponent,
+    AbsencesComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
