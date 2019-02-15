@@ -12,6 +12,7 @@ import { MoneyComponent } from './money/money.component';
 import { AbsencesComponent } from './absences/absences.component';
 import { ProjetsComponent } from './projets/projets.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -38,7 +39,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
