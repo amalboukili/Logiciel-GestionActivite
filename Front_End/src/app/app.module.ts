@@ -13,7 +13,9 @@ import { AbsencesComponent } from './absences/absences.component';
 import { ProjetsComponent } from './projets/projets.component';
 
 import { HttpClientModule } from '@angular/common/http';
-
+import { LoginComponent } from './login/login.component';
+import { LogupComponent } from './logup/logup.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '' , redirectTo: 'home', pathMatch: 'full'},
@@ -22,7 +24,8 @@ const routes: Routes = [
   { path: 'Frais', component : MoneyComponent},
   { path: 'Absences', component: AbsencesComponent},
   { path: 'Projets', component: ProjetsComponent},
-
+  { path: 'Login' , component: LoginComponent},
+  { path: 'Logup' , component: LogupComponent}
 ];
 
 @NgModule({
@@ -34,13 +37,16 @@ const routes: Routes = [
     CalendarComponent,
     MoneyComponent,
     ProjetsComponent,
-    AbsencesComponent
+    AbsencesComponent,
+    LoginComponent,
+    LogupComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

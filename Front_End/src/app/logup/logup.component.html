@@ -1,0 +1,56 @@
+
+<div class="card" style="width: 50rem;">
+    <form style="padding: 20px;"> 
+
+  <div class="card-body">
+    <h5 class="card-title">Créer votre compte BoondManager</h5>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" id="inputLastname" placeholder="Prénom" name="Lastname"
+        [(ngModel)]="Lastname">
+    </div>
+
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" id="inputFirstname" placeholder="Nom" name="Firstname"
+        [(ngModel)]="Firstname">
+    </div>
+  </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="Email" [(ngModel)]="Email">
+        <small id="emailHelp" class="form-text text-muted">Vous pouvez utiliser des lettres, des chiffres et des points</small>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" name="Password"
+          [(ngModel)]="Password">
+          <small id="PasswordHelp" class="form-text text-muted">Utilisez au moins huit caractère avec des lettres, des chiffres et des symboles</small>
+
+      </div>
+      <div class="form-group col-md-6">
+        <input type="password" class="form-control" id="inputPassword1" placeholder="Confirmer" name="Password1"
+          [(ngModel)]="Password1">
+      </div>
+    </div>
+
+
+    <div class="form-row" style=" padding-top:20px">
+ 
+          
+        <div class="form-group col-md-5 control">
+              <a href="Login">
+                Se connecter à un compte existant
+              </a>
+            
+          </div>
+      <div class="form-group col-sm-7">
+        <button type="submit" class="btn btn-success ">S'inscrire</button>
+      </div>
+   
+    </div>
+  </form>
+</div>
