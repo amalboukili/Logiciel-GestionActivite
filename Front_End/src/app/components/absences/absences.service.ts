@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AbsencesComponent } from '../absences/absences.component';
 import { Observable } from 'rxjs';
-import { Absence } from '../models/abs';
+import { Absence } from '../../models/abs';
 
 @Injectable({
     providedIn: 'root'

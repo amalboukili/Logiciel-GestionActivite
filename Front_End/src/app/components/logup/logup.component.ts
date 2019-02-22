@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-logup',
@@ -7,17 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogupComponent implements OnInit {
 
-  Firstname = '';
-  Lastname = '';
-  Email = '';
-  Password = '';
-  Password1 = '';
-
-
+  user: User = new User();
 
   constructor() { }
 
   ngOnInit() {
+  }
+  onSubmit(): void {
+    console.log(this.user);
   }
 
 }

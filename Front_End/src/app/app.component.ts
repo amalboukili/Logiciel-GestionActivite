@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AbsencesService } from './absences/absences.service';
-import { AbsencesComponent } from './absences/absences.component';
+import { AbsencesService } from './components/absences/absences.service';
+import { AbsencesComponent } from './components/absences/absences.component';
 
 
 @Component({
