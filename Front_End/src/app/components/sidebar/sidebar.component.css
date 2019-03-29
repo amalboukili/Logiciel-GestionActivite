@@ -1,6 +1,7 @@
-#sidebar-wrapper {
+ /* sidebar */
+ #sidebar-wrapper {
     min-height: 100vh;
-    margin-left: -15rem;
+    margin-left: -15rem; 
     -webkit-transition: margin .25s ease-out;
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
@@ -15,6 +16,7 @@
   #sidebar-wrapper .list-group {
     width: 1rem;
   }
+  
   
   #page-content-wrapper {
     min-width: 100vw;
@@ -35,25 +37,25 @@
       
       width:40px;
       height: 40px;
-      background-image: url('https://img.icons8.com/small/40/000000/calendar.png');
+       background-image: url('https://img.icons8.com/small/40/000000/calendar.png'); 
   }
 
   #admin-money-item{
     width:40px;
     height: 40px;
-      background-image: url('https://img.icons8.com/wired/40/000000/money.png');
+       background-image: url('https://img.icons8.com/wired/40/000000/money.png'); 
   }
 
   #admin-outtime-item{
       width:40px;
       height: 40px;
-      background-image: url('https://img.icons8.com/material-outlined/40/000000/calendar.png');
+       background-image: url('https://img.icons8.com/material-outlined/40/000000/calendar.png'); 
   }
 
   #admin-project-item{
       width: 40px;
       height: 40px;
-      background-image: url('https://img.icons8.com/wired/40/000000/brief.png');
+       background-image: url('https://img.icons8.com/wired/40/000000/brief.png'); 
   }
 
   @media (min-width: 768px) {

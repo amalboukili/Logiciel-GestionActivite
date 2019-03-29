@@ -1,11 +1,28 @@
-<app-navbar></app-navbar>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-1">
-            <app-sidebar></app-sidebar>
-        </div>
-        <div class="col-11">
-            <router-outlet></router-outlet>
+<div *ngIf="isAuthenticated; then doSomething; else doSomethingElse;"></div>
+<ng-template #doSomethingElse>
+    <!-- <a [routerLink]="['/log-in']" class="btn btn-primary">Log in</a>
+    <a [routerLink]="['/sign-up']" class="btn btn-primary">Sign up</a> -->
+    <app-log-in></app-log-in>
+</ng-template>
+
+<ng-template #doSomething>
+
+    <!-- navbar -->
+    <app-navbar></app-navbar>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1">
+                    <!-- sidebar -->
+                    <app-sidebar></app-sidebar>
+                </div>
+                <div class="col-11">
+
+                    <!-- home  -->
+                    <router-outlet></router-outlet>
+
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</ng-template>

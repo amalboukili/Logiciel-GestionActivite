@@ -23,7 +23,8 @@ export function reducer(state = initialState, action: All): State {
           isAuthenticated: true,
           user: {
             token: action.payload.token,
-            email: action.payload.email
+            email: action.payload.email,
+            name: action.payload.name
           },
           errorMessage: null
         };
@@ -36,6 +37,30 @@ export function reducer(state = initialState, action: All): State {
           ...state,
           errorMessage: 'Incorrect email and/or password.'
         };
+      }
+
+
+      case AuthActionTypes.SIGNUP_SUCCESS: {
+        return {
+          ...state,
+          isAuthenticated: true,
+          user: {
+            token: action.payload.token,
+            email: action.payload.email,
+            name: action.payload.name
+          },
+          errorMessage: null
+        };
+      }
+      case AuthActionTypes.SIGNUP_FAILURE: {
+        return {
+          ...state,
+          errorMessage: 'That email is already in use.'
+        };
+      }
+
+      case AuthActionTypes.LOGOUT : {
+        return initialState;
       }
     }
   }

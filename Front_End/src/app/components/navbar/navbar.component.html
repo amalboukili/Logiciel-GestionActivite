@@ -1,47 +1,53 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:white">
-  <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a> 
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:white">
+    <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a>
 
-  <b class="navbar-brand">BOOND<b style="color:chocolate">MANAGER</b></b>
+    <b class="navbar-brand">BOOND<b style="color:chocolate">MANAGER</b></b>
 
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="display: flex; justify-content: flex-end">
-    <div class="navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="display: flex; justify-content: flex-end">
+      <div class="navbar-nav">
 
-      <button class="btn btn-secondary btn-light" type="button" style="background-color: white; border-color: white">
-        ? Aide
-      </button>
-
-
-      <div class="btn-group">
         <button class="btn btn-secondary btn-light" type="button" style="background-color: white; border-color: white">
-          <img src="https://img.icons8.com/material-sharp/24/000000/circled-menu.png">Apps
+          ? Aide
         </button>
-        <button type="button" class="btn btn-lg btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" style="background-color: white; border-color: white">
-          <span class="sr-only"></span>
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+
+
+        <div class="btn-group">
+          <button class="btn btn-secondary btn-light" type="button"
+            style="background-color: white; border-color: white">
+            <img src="https://img.icons8.com/material-sharp/24/000000/circled-menu.png">Apps
+          </button>
+          <button type="button" class="btn btn-lg btn-light dropdown-toggle dropdown-toggle-split"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            style="background-color: white; border-color: white">
+            <span class="sr-only"></span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/**">Action</a>
+            <a class="dropdown-item" routerLink="/**">Another action</a>
+            <a class="dropdown-item" routerLink="/**">Something else here</a>
+          </div>
         </div>
-      </div>
 
 
 
-      <div class="btn-group">
-        <a href="home" class="btn btn-secondary btn-light" role="button" style="background-color: white; border-color: white">
-          <img src="./assets/Boondmanager-head.png" style="width: 40px; height: 40px;"> <form><label for="inputPassword2" class="sr-only">Password</label></form>
-        </a>
-        <button type="button" class="btn btn-lg btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" style="background-color: white; border-color: white">
-          <span class="sr-only"></span>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" href="Login">S'identifier</a>
-          <a class="dropdown-item" href="Logup">S'inscrire</a>
+        <div class="btn-group">
+          <a routerLink="/home" class="btn btn-secondary btn-light" role="button"
+            style="background-color: white; border-color: white">
+            <img src="./assets/Boondmanager-head.png" style="width: 40px; height: 40px;"> {{ user?.name || 'null'}}
+          </a>
+          <button type="button" class="btn btn-lg btn-light dropdown-toggle dropdown-toggle-split"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            style="background-color: white; border-color: white">
+            <span class="sr-only"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="" class="dropdown-item" (click)="logOut()">Log out</a>
+
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+  

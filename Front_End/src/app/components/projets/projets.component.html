@@ -1,3 +1,45 @@
-<p>
-  projets works!
-</p>
+<div class="main">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col" style="background-color:WhiteSmoke; border-left: 5px solid chocolate">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <h5>Mes projets</h5>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col" style="background-color:chocolate; border-left: 5px solid chocolate">
+          <nav class="navbar navbar-expand-lg navbar-dark">
+              <ul class="navbar-nav">
+              <li><a  routerLink="/projets" class="nav-link">Voir les projets</a></li>
+              <li><a  routerLink="/addprojet" class="nav-link">Créer un projet</a></li>
+            
+            </ul>
+          </nav>
+        </div>
+      </div>
+ 
+      <p style="color: blue">{{projets.length}} projet(s) trouvés</p>
+    
+    <table class="table table-striped">
+      <thead style="border-bottom: 5px solid chocolate">
+      <tr>
+        <th>Référence</th>
+        <th>Client</th>
+      </tr>
+</thead>
+      <tbody>
+        <tr *ngFor="let proj of projets">
+          <td>{{proj.numPoint}} - {{proj.designation}} - {{proj.clientId}}
+            <br>
+              {{proj.contratType}}
+              </td>
+          <td>{{proj.name}} - {{proj.numPoint}}</td>
+          <td><button class="btn btn-danger" (click)="deleteProjet(proj)"> Supprimer le projet</button></td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

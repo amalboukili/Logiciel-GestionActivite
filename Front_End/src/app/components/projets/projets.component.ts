@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjetsService } from 'src/app/services/projets.service';
+import { Projet } from 'src/app/models/proj';
 
 @Component({
   selector: 'app-projets',
@@ -6,10 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projets.component.css']
 })
 export class ProjetsComponent implements OnInit {
-
-  constructor() { }
+  
+  projets:Projet[];
+  
+  constructor(
+    private projetsService : ProjetsService
+  ) { }
 
   ngOnInit() {
+    this.projetsService.getProjets().subscribe(
+      response =>this.handleSuccessfulResponse(response),
+    );
+  }
+  handleSuccessfulResponse(response) {
+    this.projets=response;
   }
 
+  deleteProjet(projet: Projet): void {
+    this.projetsService.deleteProjet(projet)
+      .subscribe( data => {
+        this.projets = this.projets.filter(u => u !== projet);
+      })
+  };
+
+  
+
+  
 }

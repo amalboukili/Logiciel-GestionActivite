@@ -1,0 +1,64 @@
+<div class="main">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col" style="background-color:WhiteSmoke; border-left: 5px solid chocolate">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <h5>Mes frais</h5>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col" style="background-color:chocolate; border-left: 5px solid chocolate">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <ul class="navbar-nav">
+                <li><a  routerLink="/frais" class="nav-link">Voir les frais</a></li>
+                <li><a  routerLink="/addfrais" class="nav-link">Créer</a></li>
+              
+              </ul>
+            </nav>
+          </div>
+        </div>
+   
+        <p style="color: blue">{{frais.length}} note(s) de frais trouvées</p>
+      
+      <table class="table table-striped table-bordered table-sm">
+        <thead style="border-bottom: 5px solid chocolate">
+        <tr>
+          <th width="85%">Période</th>
+          <th>Payé</th>
+          <th>Validation</th>
+        </tr>
+  </thead>
+        <tbody>
+          <tr *ngFor="let fr of frais">
+            <td [ngSwitch]="fr.validation">
+                <div *ngSwitchCase="'en-cours'">
+                  Créer {{fr.periode | date: "MMMM yyyy"}} 
+                </div>
+                <div *ngSwitchDefault>{{fr.periode | date: "MMMM yyyy"}}</div>
+            </td>
+            <td [ngSwitch]="fr.paye">
+              <div *ngSwitchCase="'Oui'"> <i class="fa fa-check-circle" style="font-size:36px;color:green"></i></div>
+              <div *ngSwitchCase="'Non'"><i class="fa fa-times-circle" style="font-size:36px;color:red"></i> </div>
+              <div *ngSwitchCase="''"></div>
+            </td>
+           
+            <td [ngSwitch]="fr.validation">
+                <div *ngSwitchCase="'Oui'"> 
+                    <i class="fa fa-check-circle" style="font-size:36px;color:green"></i>
+                </div>
+                <div *ngSwitchCase="'Non'"> 
+                    <i class="fa fa-times-circle" style="font-size:36px;color:red"></i>
+                </div>
+                <div *ngSwitchDefault>
+                    <i class="fa fa-spinner fa-spin"style="font-size:30px;"></i> 
+                </div>
+              </td>
+              <td><button class="btn" (click)="deleteFrais(fr)"> <i class="fa fa-trash"></i></button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,5 +1,3 @@
-
-
 export class Absence {
     public id: number;
   public name: string;
