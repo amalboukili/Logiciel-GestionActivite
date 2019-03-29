@@ -1,4 +1,4 @@
-package com.webservices.Logiciel_GestionActivite.LogicielGestion;
+package com.webservices.Logiciel_GestionActivite.LogicielGestion.model;
 
 public class Absence {
 
